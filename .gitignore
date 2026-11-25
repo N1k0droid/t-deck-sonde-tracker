@@ -1,0 +1,6 @@
+.pio/
+release/
+maps/
+mapwork/
+.vscode/
+__pycache__/

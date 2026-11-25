@@ -1,0 +1,15 @@
+{
+  "_comment": "Example map pack: whole world at minimal detail, Europe, Italy, full detail on Sicily. bbox = [south, west, north, east] in degrees. Areas are Geofabrik names (https://download.geofabrik.de). Layers are processed in order: earlier layers win where they overlap. The world source uses the tiny Monaco extract only to get coastlines and borders: its place names are excluded.",
+  "workdir": "mapwork",
+  "output": "mapwork/maps",
+  "sources": {
+    "world": { "area": "monaco", "bounds": "world", "maxzoom": 7, "args": ["--exclude_layers=place"] },
+    "italy": { "area": "italy", "maxzoom": 14 }
+  },
+  "layers": [
+    { "name": "sicily", "source": "italy", "bbox": [36.6, 12.3, 38.35, 15.7], "zoom": [12, 14] },
+    { "name": "italy",  "source": "italy", "bbox": [36.5, 6.5, 47.2, 18.6],   "zoom": [8, 11] },
+    { "name": "europe", "source": "world", "bbox": [34, -25, 72, 45],         "zoom": [3, 7] },
+    { "name": "world",  "source": "world", "bbox": [-85, -180, 85, 180],      "zoom": [0, 2] }
+  ]
+}
